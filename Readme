@@ -1,0 +1,4 @@
+Important!
+chmod +x ./docker-entrypoint.sh
+
+docker build -t pptp_client .

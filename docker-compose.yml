@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  pptp:
+    image: pptp_client
+    container_name: pptp
+    volumes:
+      - ./config/vps:/etc/ppp/peers/vps
+      - ./config/options.pptp:/etc/ppp/options.pptp
+    environment:
+      - SERVER=server.name #server hostname
+      - TUNNEL=vps # connection name (any)
+      - USERNAME=username # username
+      - PASSWORD=password # password
+    network_mode: host # use host network. Need to apply  tunnel for the whole VM
+    privileged: true
+    restart: unless-stopped
+    
