@@ -45,6 +45,11 @@ replacedefaultroute
 mtu 1200
 mru 1200
 
+# using the same IP address each connect
+# change x for desired IP, keep ":" at the end of string
+noipdefault
+192.168.1.x:
+
 # Encryption
 # (There have been multiple versions of PPP with encryption support,
 # choose which of the following sections you will use.  Note that MPPE
